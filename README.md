@@ -8,6 +8,15 @@ This repository contains a **Dockerfile** to create a docker container with Orac
 This **Dockerfile** has been published as a [trusted build](https://index.docker.io/u/alexeiled/docker-oracle-xe-11g/) to the public [Docker Registry](https://index.docker.io/).
 
 
+### How-To: Build this image
+
+You will need to download Oracle XE from Oracle [site](http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html).
+
+Then run following command to convert downloaded **rpm** package into **deb**.
+```
+sudo alien oracle-xe-11.2.0-1.0.x86_64.rpm
+```
+
 ### How-To: Install and Use
 
 

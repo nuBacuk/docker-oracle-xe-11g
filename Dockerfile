@@ -1,4 +1,4 @@
-FROM wnameless/xe-temp
+FROM buildpack-deps:trusty-curl
 
 MAINTAINER Alexei Ledenev <alexei.led@gmail.com>
 
@@ -6,13 +6,21 @@ ADD chkconfig /sbin/chkconfig
 ADD init.ora /
 ADD initXETemp.ora /
 
-RUN apt-get install -y libaio1 net-tools bc
+RUN apt-get update && \
+    apt-get install -y libaio1 net-tools bc && \
+    apt-get autoremove && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN ln -s /usr/bin/awk /bin/awk
 RUN mkdir /var/lock/subsys
 RUN chmod 755 /sbin/chkconfig
-RUN ln -s /proc/mounts /etc/mtab
+RUN ln -sf /proc/mounts /etc/mtab
 
-RUN dpkg --install /tmp/oracle-xe_11.2.0-1.0_amd64.deb
+COPY ./pkg /tmp
+RUN mv /tmp/oracle-xe_11.2.0-1.0_amd64.deb.package /tmp/oracle-xe_11.2.0-1.0_amd64.deb && \
+    dpkg --install /tmp/oracle-xe_11.2.0-1.0_amd64.deb && \
+    rm /tmp/oracle-xe_11.2.0-1.0_amd64.deb
 
 RUN mv /init.ora /u01/app/oracle/product/11.2.0/xe/config/scripts
 RUN mv /initXETemp.ora /u01/app/oracle/product/11.2.0/xe/config/scripts
