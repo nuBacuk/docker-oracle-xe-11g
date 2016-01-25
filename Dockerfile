@@ -18,7 +18,7 @@ RUN chmod 755 /sbin/chkconfig
 RUN ln -sf /proc/mounts /etc/mtab
 
 COPY ./pkg /tmp
-RUN mv /tmp/oracle-xe_11.2.0-1.0_amd64.deb.package /tmp/oracle-xe_11.2.0-1.0_amd64.deb && \
+RUN cat /tmp/oracle-xe_11.2.0-1.0_amd64.deba* > /tmp/oracle-xe_11.2.0-1.0_amd64.deb && \
     dpkg --install /tmp/oracle-xe_11.2.0-1.0_amd64.deb && \
     rm /tmp/oracle-xe_11.2.0-1.0_amd64.deb
 
