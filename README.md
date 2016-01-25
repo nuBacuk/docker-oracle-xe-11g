@@ -42,8 +42,3 @@ user: ADMIN
 password: oracle
 ```
 
-Login by SSH
-```
-ssh root@localhost -p 49160
-password: admin
-```
