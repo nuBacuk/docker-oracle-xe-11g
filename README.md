@@ -24,9 +24,9 @@ sudo alien oracle-xe-11.2.0-1.0.x86_64.rpm
 docker pull alexeiled/docker-oracle-xe-11g
 ```
 
-Run with 1521 and 8080 ports opened:
+Run with 1521 and 8080 ports opened and 2GB shared memory:
 ```
-docker run -d -p 1521:1521 -p 8080:8080 alexeiled/docker-oracle-xe-11g
+docker run -d --shm-size=2g -p 1521:1521 -p 8080:8080 alexeiled/docker-oracle-xe-11g
 ```
 
 Connect database with following setting:
