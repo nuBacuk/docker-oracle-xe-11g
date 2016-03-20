@@ -26,13 +26,13 @@ docker pull alexeiled/docker-oracle-xe-11g
 
 Run with 1521 and 8080 ports opened:
 ```
-docker run -d -p 49161:1521 -p 49162:8080 alexeiled/docker-oracle-xe-11g
+docker run -d -p 1521:1521 -p 8080:8080 alexeiled/docker-oracle-xe-11g
 ```
 
 Connect database with following setting:
 ```
 hostname: localhost
-port: 49161
+port: 1521
 sid: xe
 username: system
 password: oracle
@@ -45,9 +45,10 @@ oracle
 
 Connect to Oracle Application Express web management console with following settings:
 ```
-url: http://localhost:49162/apex
-workspace: INTERNAL
-user: ADMIN
+url: http://localhost:8080/apex
+workspace: internal
+user: admin
 password: oracle
 ```
 
+Do not forget to change `admin` password.
