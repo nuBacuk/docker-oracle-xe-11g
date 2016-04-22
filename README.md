@@ -3,6 +3,8 @@ docker-oracle-xe-11g
 
 This repository contains a **Dockerfile** to create a docker container with Oracle Express Edition 11g Release 2 and Ubuntu 14.04 LTS (Trusty)
 
+[![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/pengbai/docker-oracle-xe-11g-r2/)
+
 [![](https://imagelayers.io/badge/pengbai/docker-oracle-xe-11g-r2:latest.svg)](https://imagelayers.io/?images=pengbai/docker-oracle-xe-11g-r2:latest 'Get your own badge on imagelayers.io')
 
 Image on docker hub: [https://hub.docker.com/r/pengbai/docker-oracle-xe-11g-r2/](https://hub.docker.com/r/pengbai/docker-oracle-xe-11g-r2/)
