@@ -37,8 +37,6 @@ RUN echo 'export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe' >> /etc/bash.bas
 RUN echo 'export PATH=$ORACLE_HOME/bin:$PATH' >> /etc/bash.bashrc
 RUN echo 'export ORACLE_SID=XE' >> /etc/bash.bashrc
 
-VOLUME /usr/lib/oracle/xe/oradata/XE
-
 EXPOSE 1521
 EXPOSE 8080
 
