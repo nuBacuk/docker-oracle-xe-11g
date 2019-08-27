@@ -20,6 +20,7 @@ done
 echo "End init."
 
 echo "Oracle started Successfully !"
+echo "success" >> /tmp/healthz
 
 # forever loop just to prevent Docker container to exit, when run as daemon
 while true; do sleep 1000; done
